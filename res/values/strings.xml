@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FlorisLivraison</string>
+    <string name="action_settings">Settings</string>
+    <string name="presentation">Bienvenue sur l\'application de livraison Floris\nConnectez-vous :</string>
+    <string name="login">Identifiant (adresse email)</string>
+    <string name="password">Mot de passe</string>
+    <string name="button_connection">Se connecter</string>
+    <string name="inside_presentation">Choisissez votre client à livrer:</string>
+    <string name="message_accueil">Bonjour</string>
+    <string name="message_accueil_nom"></string>
+    <string name="message_accueil_2">Veuillez choisir votre livraison.</string>
+</resources>
