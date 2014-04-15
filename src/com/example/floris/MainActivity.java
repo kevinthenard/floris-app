@@ -40,19 +40,25 @@ public class MainActivity extends Activity {
 				
 				// ICI ce qu'il se passe quand on clique sur le bouton
 				
-				if (editText1.length() < 5) {
-					textView1.setText("Veuillez remplir le champ de login (l'email)");
-				}else if (editText2.length() < 5) {
+				if (editText1.length() < 1) {
+					textView1.setText("Veuillez remplir le champ de login (email)");
+				}else if (editText2.length() < 1) {
 					textView1.setText("Veuillez remplir le mot de passe");
 				}else{
 					// on change de vue
-					
+					 boolean resultpassword = json.connectLivreur(editText1.getText().toString(), editText2.getText().toString());
+
+					 if (resultpassword == true) {
+						 final String LOGIN = textView1.getText().toString();
+							Intent vueAccueil = new Intent(MainActivity.this, accueil.class);
+							vueAccueil.putExtra("login", LOGIN ); // pour passer le texte à la prochaine vue
+							//startActivity(vueAccueil); // change de vue
+							textView1.setText("Good.");
+					 }else{
+						 textView1.setText("Le login et mot de passe sont faux.");
+					 }
 					// A RECUPERER DE LA BDD
-					final String LOGIN = "user_login";
 					
-					Intent vueAccueil = new Intent(MainActivity.this, accueil.class);
-					vueAccueil.putExtra("login", LOGIN );
-					startActivity(vueAccueil);
 					
 				}
 	        	
