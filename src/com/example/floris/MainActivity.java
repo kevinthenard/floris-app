@@ -52,16 +52,12 @@ public class MainActivity extends Activity {
 						 final String LOGIN = textView1.getText().toString();
 							Intent vueAccueil = new Intent(MainActivity.this, accueil.class);
 							vueAccueil.putExtra("login", LOGIN ); // pour passer le texte à la prochaine vue
-							//startActivity(vueAccueil); // change de vue
+							startActivity(vueAccueil); // change de vue
 							textView1.setText("Good.");
 					 }else{
 						 textView1.setText("Le login et mot de passe sont faux.");
 					 }
-					// A RECUPERER DE LA BDD
-					
-					
 				}
-	        	
 			}
 		});
 	}

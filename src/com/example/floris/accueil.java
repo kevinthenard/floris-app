@@ -19,12 +19,12 @@ public class accueil extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
-		/*super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.accueil);
 		
-		message_accueil_nom = (TextView) findViewById(R.id.message_accueil_nom);
+		//message_accueil_nom = (TextView) findViewById(R.id.message_accueil_nom);
 		
 		login = vueAccueil.getStringExtra("login");
-		message_accueil_nom.setText(login);*/
+		message_accueil_nom.setText(login);
 	}
 }
