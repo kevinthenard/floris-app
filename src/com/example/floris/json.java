@@ -35,6 +35,32 @@ public class json extends acces_floris_json {
 	String message;
 	static String result = "false";
 
+	public static String getName(String email) {
+		try {
+        	
+        	// http://kt.lc/floris/json.php?getnamebyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getnamebyid=1&email="+email;
+        	
+        	// String myurl= "http://www.exemple.com/getPersonnes";
+
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            
+            InputStream inputStream = connection.getInputStream();
+            // Result contient le boolean : true = session, false = combo log/mdp faux.
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
+	}
 	public static String md5(String s) {
 	    try {
 	        // Create MD5 Hash
@@ -93,22 +119,13 @@ public class json extends acces_floris_json {
 	            InputStream inputStream = connection.getInputStream();
 	            // Result contient le boolean : true = session, false = combo log/mdp faux.
 	            result = InputStreamOperations.InputStreamToString(inputStream);
-	            String resultat = result.trim() ;
-	            int toto = resultat.length();
-	            String titi = Integer.toString(toto);
-	            
-	            Log.v("longueur", titi);
 	            
 	            // on teste result s'il est true ou false
 	            int test = result.indexOf("true");
 	            
-	            
-	            
 	    		if (test>=0) {
-	    			Log.v("return", "true");
 	    			return true;
 	    		} else {
-	    			Log.v("return", "false");
 	    			return false;
 	    		}
 	            

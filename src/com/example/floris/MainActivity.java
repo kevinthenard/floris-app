@@ -2,6 +2,7 @@ package com.example.floris;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -12,6 +13,7 @@ import android.content.Intent;
 
 public class MainActivity extends Activity {
 	
+	public static String login;
 	private TextView TextMessageErreur = null; // initialisation message d'erreur à vide
 	
 	@Override
@@ -49,11 +51,14 @@ public class MainActivity extends Activity {
 					 boolean resultpassword = json.connectLivreur(editText1.getText().toString(), editText2.getText().toString());
 
 					 if (resultpassword == true) {
-						 final String LOGIN = textView1.getText().toString();
-							Intent vueAccueil = new Intent(MainActivity.this, accueil.class);
-							vueAccueil.putExtra("login", LOGIN ); // pour passer le texte à la prochaine vue
-							startActivity(vueAccueil); // change de vue
-							textView1.setText("Good.");
+						final String login = editText1.getText().toString();
+						
+						// Changement de vue
+						Intent vueAccueil = new Intent(MainActivity.this, accueil.class);
+						vueAccueil.putExtra("login", login ); // pour passer le texte à la prochaine vue
+						startActivity(vueAccueil); // change de vue
+						textView1.setText("Good.");
+						
 					 }else{
 						 textView1.setText("Le login et mot de passe sont faux.");
 					 }
