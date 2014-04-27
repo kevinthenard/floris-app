@@ -34,7 +34,24 @@ public class json extends acces_floris_json {
 	String[] itemsByID;
 	String message;
 	static String result = "false";
-
+	
+	public static String getAdresse(String id) {
+		return "adresse retournée";
+	}
+	public static String getCodePostal(String id) {
+		return "CP retourné";
+	}
+	public static String getVille(String id) {
+		return "ville retournée";
+	}
+	public static String getPays(String id) {
+		return "pays retourné";
+	}
+	public static String getDateLivraisonPrevue(String id) {
+		return "date retournée";
+	}
+    
+    
 	public static String getName(String email) {
 		try {
         	
@@ -124,8 +141,10 @@ public class json extends acces_floris_json {
 	            int test = result.indexOf("true");
 	            
 	    		if (test>=0) {
+	    			Log.v("return", "true");
 	    			return true;
 	    		} else {
+	    			Log.v("return", "false");
 	    			return false;
 	    		}
 	            
@@ -134,5 +153,4 @@ public class json extends acces_floris_json {
 	            return false;
 	        }
 	}
-	
 }

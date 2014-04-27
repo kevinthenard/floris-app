@@ -1,31 +1,28 @@
 package com.example.floris;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageButton;
 
-public class accueil extends Activity {
+public class livraison extends Activity {
 	
-    private String login;
-	private String name;
-	
-	ListView lvListe;
+    private String id;
+    private String adresse;
+    private String codepostal;
+    private String ville;
+    private String pays;
+    private String datelivraisonprevue;
 	//Resources res = getResources();
 	
 	@Override
@@ -34,10 +31,10 @@ public class accueil extends Activity {
         
         // On récupère les variables des vues précédentes
         Intent MainActivityIntent = getIntent();
-        login = MainActivityIntent.getStringExtra("login");
+        id = MainActivityIntent.getStringExtra("id");
         
         // On affiche le contenu de la vue
-        setContentView(R.layout.accueil);
+        setContentView(R.layout.livraison);
         
         /* ------- */
         // MENUBAR
@@ -71,17 +68,23 @@ public class accueil extends Activity {
 		});*/
         /* ------- */
         
-        // Bonjour au nom du livreur
-        final TextView textView2 = (TextView) findViewById(R.id.textView2);
-        name = json.getName(login);
-        textView2.setText(name);
+        // Modification des infos
+        final TextView adresse_view = (TextView) findViewById(R.id.adresse);
+        final TextView codepostal_view = (TextView) findViewById(R.id.codepostal);
+        final TextView ville_view = (TextView) findViewById(R.id.ville);
+        final TextView pays_view = (TextView) findViewById(R.id.pays);
+        final TextView datelivraisonprevue_view = (TextView) findViewById(R.id.datelivraisonprevue);
         
-        // On affiche la liste
-     	
-        List<listAccueil> maBibliotheque = new ArrayList<listAccueil>();
-        /*
-        lvListe = (ListView)findViewById(R.id.listelivraison);
-        String[] listeStrings = {"France","Allemagne","Russie"};
-        lvListe.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,listeStrings));*/
+        adresse = json.getAdresse(id);
+        codepostal = json.getCodePostal(id);
+        ville = json.getVille(id);
+        pays = json.getPays(id);
+        datelivraisonprevue = json.getDateLivraisonPrevue(id);
+        
+        adresse_view.setText(adresse);
+        codepostal_view.setText(codepostal);
+        ville_view.setText(ville);
+        pays_view.setText(pays);
+        datelivraisonprevue_view.setText(datelivraisonprevue);
     }
 }
