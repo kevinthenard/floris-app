@@ -44,6 +44,11 @@ public class listAccueil {
     public String getVille() {
         return ville;
     }
- 
+    /*private void RemplirLaBibliotheque() {
+        maBibliotheque.clear();
+        maBibliotheque.add(new listAccueil("Starcraft 2 : Les diables du ciel", "William-C Dietz"));
+        maBibliotheque.add(new listAccueil("L'art du développement Android", "Mark Murphy"));
+        maBibliotheque.add(new listAccueil("Le seuil des ténèbres", "Karen Chance"));
+    }*/
 	
 }

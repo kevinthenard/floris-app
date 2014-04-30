@@ -1,238 +1,243 @@
-<!-- android:layout_height="match_parent" --><FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/FrameLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0px"
-    android:paddingRight="0px"
-    android:paddingTop="0px"
-    tools:context=".accueil" >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:orientation="horizontal"
-        android:background="#277729" >
-
-        <ImageButton   
-            android:contentDescription="GoToMenu"
-		    android:id="@+id/ButtonMenu"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="6dp"
-		    android:background="#1C571D"  
-		    android:src="@drawable/accueil"
-		    android:visibility="visible" />
+<ScrollView 
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/scroll" 
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+      
+	<FrameLayout 
+	    android:id="@+id/FrameLayout1"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:paddingBottom="0dp"
+	    android:paddingLeft="0px"
+	    android:paddingRight="0px"
+	    android:paddingTop="0px" >
+	
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="41dp"
+	        android:orientation="horizontal"
+	        android:background="#277729" >
+	
+	        <ImageButton   
+	            android:contentDescription="GoToMenu"
+			    android:id="@+id/ButtonMenu"
+	            android:layout_width="28dp"
+	            android:layout_height="28dp"
+	            android:layout_marginLeft="6dp"
+	            android:layout_marginTop="6dp"
+			    android:background="#1C571D"  
+			    android:src="@drawable/accueil"
+			    android:visibility="visible" />
+			    
+	    </LinearLayout>
+		<LinearLayout
+	        android:layout_width="34dp"
+	        android:layout_height="41dp"
+	        android:layout_gravity="right"
+	        android:orientation="horizontal" >
+	        
+		    <ImageButton
+		        android:contentDescription="Logout"
+	            android:id="@+id/ButtonLogout"
+	            android:layout_width="28dp"
+				android:layout_height="28dp"
+				android:layout_marginRight="6dp"
+				android:layout_marginTop="6dp"
+				android:background="#1C571D"
+				/> 
 		    
-    </LinearLayout>
-	<LinearLayout
-        android:layout_width="34dp"
-        android:layout_height="41dp"
-        android:layout_gravity="right"
-        android:orientation="horizontal" >
-        
-	    <ImageButton
-	        android:contentDescription="Logout"
-            android:id="@+id/ButtonLogout"
-            android:layout_width="28dp"
-			android:layout_height="28dp"
-			android:layout_marginRight="6dp"
-			android:layout_marginTop="6dp"
-			android:background="#1C571D"
-			/> 
-	    
-    </LinearLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
-
-        <TextView
-            android:id="@+id/message_accueil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Livraison numéro" />
-
-        <TextView
-            android:id="@+id/numerolivraison"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="115dp"
-            android:layout_marginTop="0dp"
-            android:text="00000" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A livrer à:"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="20dp" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="#D3FEE2"
-            android:paddingBottom="5dp"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="5dp" >
-
-            <TextView
-                android:id="@+id/adresse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:text="Adresse" />
-
-            <TextView
-                android:id="@+id/codepostal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="20dp"
-                android:text="CP000" />
-
-            <TextView
-                android:id="@+id/ville"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="20dp"
-                android:text="VILLE" />
-
-            <TextView
-                android:id="@+id/pays"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="40dp"
-                android:text="PAYS" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:background="#D3FEE2" >
-
-            <TextView
-                android:id="@+id/TextView04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:text="Date de livraison prévue" />
-
-            <TextView
-                android:id="@+id/datelivraisonprevue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="20dp"
-                android:text="00/11/2222 33:33" />
-
-        </FrameLayout>
-
-       <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginTop="190dp"
-            android:background="#D3FEE2"
-            android:paddingBottom="15dp"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="5dp" >
-
-            <TextView
-                android:id="@+id/TextView03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:text="Statut Livraison" />
-            
-            <RadioGroup
-                android:id="@+id/statut"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:checkedButton="@+id/radio2"
-                android:gravity="center"
-                android:orientation="horizontal" >
-		 
-		    	<RadioButton 
-		    	    android:checked="true"
-		    	    android:id="@+id/radio1"
-		    		android:layout_width="100dp"
-		    		android:layout_height="25dp"
-		    		android:text="livré"
-		    	/>
-		    	<RadioButton 
-		    		android:id="@+id/radio2"
-		    		android:layout_width="100dp"
-		    		android:layout_height="25dp"
-		    		android:text="à relivrer"
-		    	/>
-		    </RadioGroup>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="260dp"
-            android:background="#D3FEE2"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="5dp" >
-
-            <TextView
-                android:id="@+id/TextView05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
-                android:layout_marginTop="0dp"
-                android:text="Commentaire Livraison" />
-
-            <EditText
-                android:id="@+id/commentairelivraison"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#FFFFFF"
-                android:ems="250" >
-
-                <requestFocus />
-            </EditText>
-        </FrameLayout>
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="380dp"
-        android:padding="10dp">
-
-        <Button
-            android:id="@+id/buttonvalider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Valider" />
-        
-    </FrameLayout>
-
-</FrameLayout>
+	    </LinearLayout>
+	    <FrameLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="40dp"
+	        android:paddingBottom="@dimen/activity_vertical_margin"
+	        android:paddingLeft="@dimen/activity_horizontal_margin"
+	        android:paddingRight="@dimen/activity_horizontal_margin"
+	        android:paddingTop="@dimen/activity_vertical_margin" >
+	
+	        <TextView
+	            android:id="@+id/message_accueil"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Livraison numéro" />
+	
+	        <TextView
+	            android:id="@+id/numerolivraison"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="115dp"
+	            android:layout_marginTop="0dp"
+	            android:text="00000" />
+	
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="A livrer à:"
+	            android:layout_marginLeft="0dp"
+	            android:layout_marginTop="20dp" />
+	
+	        <FrameLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="40dp"
+	            android:background="#D3FEE2"
+	            android:paddingBottom="5dp"
+	            android:paddingLeft="@dimen/activity_horizontal_margin"
+	            android:paddingRight="@dimen/activity_horizontal_margin"
+	            android:paddingTop="5dp" >
+	
+	            <TextView
+	                android:id="@+id/adresse"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="0dp"
+	                android:text="Adresse" />
+	
+	            <TextView
+	                android:id="@+id/codepostal"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="20dp"
+	                android:text="CP000" />
+	
+	            <TextView
+	                android:id="@+id/ville"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="70dp"
+	                android:layout_marginTop="20dp"
+	                android:text="VILLE" />
+	
+	            <TextView
+	                android:id="@+id/pays"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="40dp"
+	                android:text="PAYS" />
+	        </FrameLayout>
+	
+	        <FrameLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="110dp"
+	            android:paddingBottom="@dimen/activity_vertical_margin"
+	            android:paddingLeft="@dimen/activity_horizontal_margin"
+	            android:paddingRight="@dimen/activity_horizontal_margin"
+	            android:paddingTop="@dimen/activity_vertical_margin"
+	            android:background="#D3FEE2" >
+	
+	            <TextView
+	                android:id="@+id/TextView04"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="0dp"
+	                android:text="Date de livraison prévue" />
+	
+	            <TextView
+	                android:id="@+id/datelivraisonprevue"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="20dp"
+	                android:text="00/11/2222 33:33" />
+	
+	        </FrameLayout>
+	
+	       <FrameLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="54dp"
+	            android:layout_marginTop="190dp"
+	            android:background="#D3FEE2"
+	            android:paddingBottom="15dp"
+	            android:paddingLeft="@dimen/activity_horizontal_margin"
+	            android:paddingRight="@dimen/activity_horizontal_margin"
+	            android:paddingTop="5dp" >
+	
+	            <TextView
+	                android:id="@+id/TextView03"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="0dp"
+	                android:text="Statut Livraison" />
+	            
+	            <RadioGroup
+	                android:id="@+id/statut"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:layout_marginTop="20dp"
+	                android:checkedButton="@+id/radio2"
+	                android:gravity="center"
+	                android:orientation="horizontal" >
+			 
+			    	<RadioButton 
+			    	    android:checked="true"
+			    	    android:id="@+id/radio1"
+			    		android:layout_width="100dp"
+			    		android:layout_height="25dp"
+			    		android:text="livré"
+			    	/>
+			    	<RadioButton 
+			    		android:id="@+id/radio2"
+			    		android:layout_width="100dp"
+			    		android:layout_height="25dp"
+			    		android:text="à relivrer"
+			    	/>
+			    </RadioGroup>
+	        </FrameLayout>
+	
+	        <FrameLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="260dp"
+	            android:background="#D3FEE2"
+	            android:paddingBottom="@dimen/activity_vertical_margin"
+	            android:paddingLeft="@dimen/activity_horizontal_margin"
+	            android:paddingRight="@dimen/activity_horizontal_margin"
+	            android:paddingTop="5dp" >
+	
+	            <TextView
+	                android:id="@+id/TextView05"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="0dp"
+	                android:layout_marginTop="0dp"
+	                android:text="Commentaire Livraison" />
+	
+	            <EditText
+	                android:id="@+id/commentairelivraison"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="20dp"
+	                android:background="#FFFFFF"
+	                android:ems="250" >
+	
+	                <requestFocus />
+	            </EditText>
+	        </FrameLayout>
+	
+	    </FrameLayout>
+	
+	    <FrameLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="380dp"
+	        android:padding="10dp">
+	
+	        <Button
+	            android:id="@+id/buttonvalider"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Valider" />
+	        
+	    </FrameLayout>
+	
+	</FrameLayout>
+</ScrollView>

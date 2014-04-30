@@ -36,19 +36,112 @@ public class json extends acces_floris_json {
 	static String result = "false";
 	
 	public static String getAdresse(String id) {
-		return "adresse retournée";
+		try {
+        	
+        	// http://kt.lc/floris/json.php?getnamebyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getadressebyid=1&id="+id;
+
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
 	}
 	public static String getCodePostal(String id) {
-		return "CP retourné";
+		try {
+        	// http://kt.lc/floris/json.php?getcpbyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getcpbyid=1&id="+id;
+
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
 	}
 	public static String getVille(String id) {
-		return "ville retournée";
+		try {
+        	// http://kt.lc/floris/json.php?getvillebyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getvillebyid=1&id="+id;
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
 	}
 	public static String getPays(String id) {
-		return "pays retourné";
+		try {
+        	// http://kt.lc/floris/json.php?getpaysbyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getpaysbyid=1&id="+id;
+
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
 	}
 	public static String getDateLivraisonPrevue(String id) {
-		return "date retournée";
+		try {
+        	// http://kt.lc/floris/json.php?getpaysbyid=1&email=livreur1@floris.fr
+        	String myurl = "http://kt.lc/floris/json.php?getdatelivraisonbyid=1&id="+id;
+
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            return result;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "erreur";
+        }
 	}
     
     
@@ -57,8 +150,6 @@ public class json extends acces_floris_json {
         	
         	// http://kt.lc/floris/json.php?getnamebyid=1&email=livreur1@floris.fr
         	String myurl = "http://kt.lc/floris/json.php?getnamebyid=1&email="+email;
-        	
-        	// String myurl= "http://www.exemple.com/getPersonnes";
 
             URL url = new URL(myurl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -99,15 +190,6 @@ public class json extends acces_floris_json {
 	
 	public int getID() {
 		return ID;
-	}
-	public String[] getAllLivraisons() {
-		items = new String[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
-		return items;
-		
-	}
-	public String[] getLivraisonsByID(int iD) {
-		itemsByID = new String[] { "Vegetables2","Fruits2","Flower Buds2","Legumes2" };
-		return itemsByID;
 	}
 	public void setMessageLivraisonsByID(int iD, String Message) {
 		message = Message;

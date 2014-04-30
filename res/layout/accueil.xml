@@ -77,27 +77,25 @@
             android:text="@string/message_accueil_2" />
 
         <RelativeLayout
-            android:background="#E9E9E9"
-            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:background="#E9E9E9" >
             
             <ListView
-			    android:id="@+id/listelivraison"
-			    android:layout_width="match_parent"
-			    android:layout_height="fill_parent">
-			    <TextView
-		            android:id="@+id/datelivraison"
-		            android:layout_width="wrap_content"
-		            android:text="11/22/3333 44:55" />
-			    <TextView
-		            android:id="@+id/ville"
-		            android:layout_width="wrap_content"
-		            android:text="Ville" />
-			    
-		    </ListView>
-        </RelativeLayout>
+		        android:id="@+id/list"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/getdata" />
 
+		    <Button
+		        android:id="@+id/getdata"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_centerHorizontal="true"
+		        android:text="Charger" />
+		</RelativeLayout>
     </FrameLayout>
 
 </FrameLayout>

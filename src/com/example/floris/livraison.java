@@ -30,42 +30,34 @@ public class livraison extends Activity {
         super.onCreate(savedInstanceState);
         
         // On récupère les variables des vues précédentes
-        Intent MainActivityIntent = getIntent();
-        id = MainActivityIntent.getStringExtra("id");
-        
+        Intent accueilIntent = getIntent();
+        id = accueilIntent.getStringExtra("id");
+        Log.i("id", id.toString());
         // On affiche le contenu de la vue
         setContentView(R.layout.livraison);
         
         /* ------- */
         // MENUBAR
-        /*final Button ButtonMenu = (Button) findViewById(R.id.ButtonMenu);
-        // clic sur le bouton menu
-        ButtonMenu.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Log.v("click", "ButtonMenu");
-			}
-		});*/
-        
-        /*final Button ButtonMenu = (Button) findViewById(R.id.ButtonMenu);
+        // To Menu
+        final ImageButton ButtonMenu = (ImageButton) findViewById(R.id.ButtonMenu);
         ButtonMenu.setOnClickListener(new OnClickListener() {
-      			
         	@Override
 	        public void onClick(View v) {
-		      	Intent intent = new Intent(accueil.this, MainActivity.class);
+		      	Intent intent = new Intent(livraison.this, accueil.class);
 		      	startActivity(intent);
 	      	}
-	    });*/
+	    });
         
-        /*
-        final Button ButtonLogout = (Button) findViewById(R.id.ButtonLogout);
-        // clic sur le bouton menu
+        
+        final ImageButton ButtonLogout = (ImageButton) findViewById(R.id.ButtonLogout);
+        // Delog
         ButtonLogout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View R) {
-				Log.v("click", "ButtonLogout");
-			}
-		});*/
+        	@Override
+	        public void onClick(View v) {
+		      	Intent intent = new Intent(livraison.this, MainActivity.class);
+		      	startActivity(intent);
+	      	}
+		});
         /* ------- */
         
         // Modification des infos
@@ -85,6 +77,7 @@ public class livraison extends Activity {
         codepostal_view.setText(codepostal);
         ville_view.setText(ville);
         pays_view.setText(pays);
+        
         datelivraisonprevue_view.setText(datelivraisonprevue);
     }
 }
