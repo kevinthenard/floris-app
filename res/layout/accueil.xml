@@ -94,7 +94,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_alignParentBottom="true"
 		        android:layout_centerHorizontal="true"
-		        android:text="Charger" />
+		        android:text="Recharger" />
 		</RelativeLayout>
     </FrameLayout>
 

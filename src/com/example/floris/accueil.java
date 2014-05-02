@@ -89,14 +89,15 @@ public class accueil extends Activity {
         
         oslist = new ArrayList<HashMap<String, String>>();
 
-        Btngetdata = (Button)findViewById(R.id.getdata);
+        /*Btngetdata = (Button)findViewById(R.id.getdata);
         Btngetdata.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
 		         new JSONParse().execute();
 			}
-		});
+		});*/
+        new JSONParse().execute();
         /* ------- */
         // MENUBAR
         // To Menu        
@@ -120,10 +121,10 @@ public class accueil extends Activity {
    	@Override
        protected void onPreExecute() {
            super.onPreExecute();
-           // A MODIFIER
+
            id = (ListView)findViewById(R.id.id);
-			code_client = (ListView)findViewById(R.id.cc);
-			date_livraison_estime = (ListView)findViewById(R.id.dle);
+           code_client = (ListView)findViewById(R.id.cc);
+           date_livraison_estime = (ListView)findViewById(R.id.dle);
 			 
            pDialog = new ProgressDialog(accueil.this);
            pDialog.setMessage("Chargement ...");

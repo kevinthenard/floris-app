@@ -32,7 +32,7 @@ public class livraison extends Activity {
         // On récupère les variables des vues précédentes
         Intent accueilIntent = getIntent();
         id = accueilIntent.getStringExtra("id");
-        Log.i("id", id.toString());
+
         // On affiche le contenu de la vue
         setContentView(R.layout.livraison);
         
@@ -48,7 +48,6 @@ public class livraison extends Activity {
 	      	}
 	    });
         
-        
         final ImageButton ButtonLogout = (ImageButton) findViewById(R.id.ButtonLogout);
         // Delog
         ButtonLogout.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +60,8 @@ public class livraison extends Activity {
         /* ------- */
         
         // Modification des infos
+        
+        final TextView numero_livraison = (TextView) findViewById(R.id.numerolivraison);
         final TextView adresse_view = (TextView) findViewById(R.id.adresse);
         final TextView codepostal_view = (TextView) findViewById(R.id.codepostal);
         final TextView ville_view = (TextView) findViewById(R.id.ville);
@@ -73,6 +74,7 @@ public class livraison extends Activity {
         pays = json.getPays(id);
         datelivraisonprevue = json.getDateLivraisonPrevue(id);
         
+        numero_livraison.setText(id);
         adresse_view.setText(adresse);
         codepostal_view.setText(codepostal);
         ville_view.setText(ville);
