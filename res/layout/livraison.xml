@@ -41,6 +41,7 @@
 		        android:contentDescription="Logout"
 	            android:id="@+id/ButtonLogout"
 	            android:layout_width="28dp"
+				android:src="@drawable/logout"
 				android:layout_height="28dp"
 				android:layout_marginRight="6dp"
 				android:layout_marginTop="6dp"
@@ -176,14 +177,14 @@
 	                android:layout_marginTop="20dp"
 	                android:checkedButton="@+id/radio2"
 	                android:gravity="center"
-	                android:orientation="horizontal" >
+	                android:orientation="horizontal"
+			    	android:padding="0dp" >
 			 
 			    	<RadioButton 
 			    	    android:checked="true"
 			    	    android:id="@+id/radio1"
 			    		android:layout_width="80dp"
 			    		android:layout_height="25dp"
-			    		android:padding="0dp"
 			    		android:text="livré"
 			    	/>
 			    	<RadioButton 
@@ -193,7 +194,7 @@
 			    		android:text="à relivrer"
 			    	/>
 			    	<RadioButton 
-			    		android:id="@+id/radio2"
+			    		android:id="@+id/radio3"
 			    		android:layout_width="90dp"
 			    		android:layout_height="25dp"
 			    		android:text="refusé"
@@ -236,9 +237,9 @@
 	    <FrameLayout
 	        android:layout_width="match_parent"
 	        android:layout_height="match_parent"
-	        android:layout_marginTop="380dp"
+	        android:layout_marginTop="400dp"
 	        android:padding="10dp">
-	
+
 	        <Button
 	            android:id="@+id/buttonvalider"
 	            android:layout_width="match_parent"

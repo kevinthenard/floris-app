@@ -33,14 +33,14 @@ public final class R {
         public static final int TextView02=0x7f08000b;
         public static final int TextView03=0x7f08001a;
         public static final int TextView04=0x7f080018;
-        public static final int TextView05=0x7f08001e;
-        public static final int action_settings=0x7f080021;
+        public static final int TextView05=0x7f08001f;
+        public static final int action_settings=0x7f080022;
         public static final int adresse=0x7f080014;
         public static final int button_connect=0x7f08000d;
-        public static final int buttonvalider=0x7f080020;
+        public static final int buttonvalider=0x7f080021;
         public static final int cc=0x7f080010;
         public static final int codepostal=0x7f080015;
-        public static final int commentairelivraison=0x7f08001f;
+        public static final int commentairelivraison=0x7f080020;
         public static final int datelivraisonprevue=0x7f080019;
         public static final int dle=0x7f080011;
         public static final int editText1=0x7f080009;
@@ -54,6 +54,7 @@ public final class R {
         public static final int pays=0x7f080017;
         public static final int radio1=0x7f08001d;
         public static final int radio2=0x7f08001c;
+        public static final int radio3=0x7f08001e;
         public static final int scroll=0x7f080012;
         public static final int statut=0x7f08001b;
         public static final int textView1=0x7f08000e;

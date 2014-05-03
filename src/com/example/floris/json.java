@@ -34,7 +34,23 @@ public class json extends acces_floris_json {
 	String[] itemsByID;
 	String message;
 	static String result = "false";
-	
+	public static void setStatut(String id, String statut, String commentaire) {
+		try {
+        	
+        	// http://kt.lc/floris/json.php?setstatutbyid=1&id=7&statut=livré&commentaire=sans encombre
+        	String myurl = "http://kt.lc/floris/json.php?setstatutbyid=1&id="+id+"&statut="+statut+"&commentaire="+commentaire;
+        	
+            URL url = new URL(myurl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            /* ajouté */
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        	StrictMode.setThreadPolicy(policy); /* ajouté */
+            connection.connect();
+            Log.v("log", myurl);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	}
 	public static String getAdresse(String id) {
 		try {
         	

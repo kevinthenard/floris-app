@@ -9,7 +9,9 @@ import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
@@ -23,7 +25,6 @@ public class livraison extends Activity {
     private String ville;
     private String pays;
     private String datelivraisonprevue;
-	//Resources res = getResources();
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,5 +82,42 @@ public class livraison extends Activity {
         pays_view.setText(pays);
         
         datelivraisonprevue_view.setText(datelivraisonprevue);
+        
+        // lors d'un clic sur le bouton du formulaire
+        
+        // Initialisation des variables
+        final Button button_valider = (Button) findViewById(R.id.buttonvalider);
+		final TextView commentaire_livraison = (TextView) findViewById(R.id.commentairelivraison);
+		
+		// On récupère les radio
+		final RadioButton livre =(RadioButton) findViewById(R.id.radio1);
+		final RadioButton a_relivrer =(RadioButton) findViewById(R.id.radio2);
+		final RadioButton refuse =(RadioButton) findViewById(R.id.radio3);
+		
+        button_valider.setOnClickListener(new View.OnClickListener() {
+        	@Override
+			public void onClick(View R) {
+        		
+        		// Recupere la valeur des radios
+        		String statut;
+        		if(livre.isChecked())
+        		{
+        		    statut = "livre";
+        		}else if(a_relivrer.isChecked()){
+        			statut = "a_relivre";
+        		}else{
+        			statut = "refuse";
+        		}
+        		String commentaire = commentaire_livraison.getText().toString();
+        		json.setStatut(id, statut, commentaire);
+
+        		// Popup
+        		Toast.makeText(livraison.this, "Commande mise à jour", Toast.LENGTH_SHORT).show();
+        		
+        		// Retour à la vue précédente
+				Intent vueAccueil = new Intent(livraison.this, accueil.class);
+				startActivity(vueAccueil); // change de vue
+        	}
+        });
     }
 }
