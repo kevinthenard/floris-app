@@ -3,10 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
+	<TextView
+        android:id="@+id/identification"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Livraison n°"
+        />
     <TextView
         android:id="@+id/id"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginLeft="115dp"
         android:layout_height="wrap_content"
         />
 

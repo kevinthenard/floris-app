@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 public class livraison extends Activity {
 	
     private String id;
+    private String login;
     private String adresse;
     private String codepostal;
     private String ville;
@@ -33,7 +34,7 @@ public class livraison extends Activity {
         // On récupère les variables des vues précédentes
         Intent accueilIntent = getIntent();
         id = accueilIntent.getStringExtra("id");
-
+        login = accueilIntent.getStringExtra("login");
         // On affiche le contenu de la vue
         setContentView(R.layout.livraison);
         
@@ -45,6 +46,7 @@ public class livraison extends Activity {
         	@Override
 	        public void onClick(View v) {
 		      	Intent intent = new Intent(livraison.this, accueil.class);
+		      	intent.putExtra("login", login );
 		      	startActivity(intent);
 	      	}
 	    });
@@ -116,6 +118,7 @@ public class livraison extends Activity {
         		
         		// Retour à la vue précédente
 				Intent vueAccueil = new Intent(livraison.this, accueil.class);
+				vueAccueil.putExtra("login", login );
 				startActivity(vueAccueil); // change de vue
         	}
         });

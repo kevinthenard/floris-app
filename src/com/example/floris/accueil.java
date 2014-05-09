@@ -62,18 +62,19 @@ public class accueil extends Activity {
 	ArrayList<HashMap<String, String>> oslist = new ArrayList<HashMap<String, String>>();
 	
 	//URL to get JSON Array
-	private static String url = "http://kt.lc/floris/json.php?livraison=all";
+	
 	
 	//JSON Node Names 
 	private static final String TAG_LIV = "livraison";
 	private static final String TAG_ID = "id";
-	private static final String TAG_CC = "code_client";
+	private static final String TAG_CC = "nom_prenom";
 	private static final String TAG_DLE = "date_livraison_estime";
 	JSONArray android = null;
 	
 	/* Fin Variables Liste*/
 	
 	ListView lvListe;
+	private String url;
 	//Resources res = getResources();
 	
 	@Override
@@ -83,7 +84,11 @@ public class accueil extends Activity {
         // On récupère les variables des vues précédentes
         Intent MainActivityIntent = getIntent();
         login = MainActivityIntent.getStringExtra("login");
+        Intent LivraisonIntent = getIntent();
+        login = LivraisonIntent.getStringExtra("login");
         
+        this.url = "http://kt.lc/floris/json.php?livraison=all&id="+login;
+        Log.v("url", url);
         // On affiche le contenu de la vue
         setContentView(R.layout.accueil);
         
@@ -117,7 +122,7 @@ public class accueil extends Activity {
         textView2.setText(name);
 	}
 	private class JSONParse extends AsyncTask<String, String, JSONObject> {
-   	 private ProgressDialog pDialog;
+	private ProgressDialog pDialog;
    	@Override
        protected void onPreExecute() {
            super.onPreExecute();
@@ -159,18 +164,19 @@ public class accueil extends Activity {
    				HashMap<String, String> map = new HashMap<String, String>();
 
    				map.put(TAG_ID, id);
-   				map.put(TAG_CC, cc);
-   				map.put(TAG_DLE, dle);
+   				map.put(TAG_CC, "Nom: "+cc);
+   				map.put(TAG_DLE, "Date de livraison: "+dle);
    				
    				oslist.add(map);
    				list=(ListView)findViewById(R.id.list);
    				
    				ListAdapter adapter = new SimpleAdapter(accueil.this, oslist,
    						R.layout.list_v,
-   						new String[] { TAG_ID, TAG_CC, TAG_DLE }, new int[] {
-   								R.id.id,R.id.cc, R.id.dle});
+   						new String[] { TAG_ID, TAG_CC, TAG_DLE, TAG_ID }, new int[] {
+   								R.id.id,R.id.cc, R.id.dle, R.id.id });
 
    				list.setAdapter(adapter);
+   				// Clic sur une des lignes de la liste
    				list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
    		            @Override
@@ -180,6 +186,7 @@ public class accueil extends Activity {
 			                // Changement de vue
 							Intent vueLivraison = new Intent(accueil.this, livraison.class);
 							vueLivraison.putExtra("id", oslist.get(+position).get("id") ); // pour passer le texte à la prochaine vue
+							vueLivraison.putExtra("login", login ); // pour passer le texte à la prochaine vue
 							Log.i("unID", oslist.get(+position).get("id"));
 							startActivity(vueLivraison); // change de vue
    		            	}
