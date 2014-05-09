@@ -88,13 +88,13 @@
 		        android:layout_height="wrap_content"
 		        android:layout_above="@+id/getdata" />
 
-		    <Button
+		    <!--  <Button
 		        android:id="@+id/getdata"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_alignParentBottom="true"
 		        android:layout_centerHorizontal="true"
-		        android:text="Recharger" />
+		        android:text="Recharger" /> -->
 		</RelativeLayout>
     </FrameLayout>
 

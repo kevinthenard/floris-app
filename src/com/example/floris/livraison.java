@@ -112,7 +112,8 @@ public class livraison extends Activity {
         		}
         		String commentaire = commentaire_livraison.getText().toString();
         		json.setStatut(id, statut, commentaire);
-
+        		Log.v("liv", "ici");
+        		
         		// Popup
         		Toast.makeText(livraison.this, "Commande mise à jour", Toast.LENGTH_SHORT).show();
         		
