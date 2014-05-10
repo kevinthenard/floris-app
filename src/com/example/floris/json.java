@@ -46,7 +46,11 @@ public class json extends acces_floris_json {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         	StrictMode.setThreadPolicy(policy); /* ajouté */
             connection.connect();
-            Log.v("log", myurl);
+            
+            InputStream inputStream = connection.getInputStream();
+            result = InputStreamOperations.InputStreamToString(inputStream);
+            
+            //return result;
         } catch (Exception e) {
             e.printStackTrace();
         }
